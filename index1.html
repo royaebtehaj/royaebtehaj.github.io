@@ -34,10 +34,11 @@
 				scene = new THREE.Scene();
 				
 				
-				geometry = new THREE.OctahedronGeometry(150, 0);
+				geometry = new THREE.CubeGeometry(200, 200, 200);
 				material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
 				mesh = new THREE.Mesh(geometry, material);
 				scene.add(mesh);
+
 
 			}
 
@@ -48,50 +49,6 @@
 				mesh.rotation.x = Date.now() * 0.0005;	
 				mesh.rotation.y = Date.now() * 0.0002;	
 				mesh.rotation.z = Date.now() * 0.001;
-				renderer.render( scene, camera );
-
-			}
-
-			setup();
-			draw();
-
-		</script>
-		
-	</body>
-</html>
-				
-				
-				var theText = "Coming Soon";
-				var hash = document.location.hash.substr( 1 );
-				if ( hash.length !== 0 ) { theText = hash; }
-				var text3d = new THREE.TextGeometry( theText, {
-					size: 200,
-					height: 20,
-					curveSegments: 2,
-					font: "helvetiker",
-					weight: "bold"
-				});
-				text3d.computeBoundingBox();
-				var centerOffset = -0.5 * ( text3d.boundingBox.max.x - text3d.boundingBox.min.x );
-				var textMaterial = new THREE.MeshBasicMaterial( { color: Math.random()*0xffffff, overdraw: true } );
-				text = new THREE.Mesh( text3d, textMaterial );
-				text.position.x = centerOffset;
-				text.position.y = 100;
-				text.position.z = 0;
-				text.rotation.x = 0;
-				text.rotation.y = Math.PI * 2;
-				parent = new THREE.Object3D();
-				parent.add( text );
-				scene.add( parent );
-
-
-			}
-
-			function draw() {
-
-				requestAnimationFrame( draw );
-				
-				// experiment with code from the snippets menu here
 
 				renderer.render( scene, camera );
 
