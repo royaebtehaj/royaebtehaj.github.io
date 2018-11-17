@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			body {
+				background-color: #000;
+				margin: 0;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<script src="js/three.min.js"></script>
+		<script src="js/Detector.js"></script>
+		<script>
+
+			
+			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+			
+			var camera, scene, renderer;
+			var geometry, material, mesh;
+			var cnt = 0;
+			var meshes = [];
+
+			function setup() {
+
+				var W = window.innerWidth, H = window.innerHeight;
+				renderer = new THREE.WebGLRenderer();
+				renderer.setSize( W, H );
+				document.body.appendChild( renderer.domElement );
+
+				camera = new THREE.PerspectiveCamera( 40, W/H, 1, 10000 );
+				camera.position.z = 900;
+				camera.position.y = Math.sin( Date.now() * 0.0002 ) * 350;
+			
+
+				scene = new THREE.Scene();
+				
+				for ( var i = 0; i < 700; i ++ ) {
+
+				
+				geometry = new THREE.TorusGeometry(200, 39.82, 40, 9, 25.13);
+				material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
+				mesh = new THREE.Mesh(geometry, material);
+				mesh.position.y = 12.23;
+				mesh.rotation.x = 3.61;
+				mesh.rotation.y = 8.89;
+				scene.add(mesh);
+								
+				mesh.scale.x = mesh.scale.y = mesh.scale.z = 0.1;
+					
+					mesh.position.x = Math.random() * 2000 - 900;
+					mesh.position.y = Math.random() * 2000 - 1000;
+					mesh.position.z = Math.random() * 1000 - 900;
+
+					mesh.rotation.x = Math.random() * 2 * Math.PI;
+					mesh.rotation.y = Math.random() * 2 * Math.PI;
+					
+					scene.add(mesh);
+					
+					meshes[ cnt ] = mesh;
+					cnt += 1;
+				}
+
+			}
+			
+			
+
+			function draw() {
+
+				requestAnimationFrame( draw );
+				
+								
+				for ( i = 0; i < cnt; i ++ ) {
+						mesh = meshes[ i ];
+						mesh.rotation.z = Date.now() * 0.0005;
+				}
+								
+				camera.position.y = Math.sin( Date.now() * 0.0009 ) * 200;
+				camera.position.x = Math.cos( Date.now() * 0.0009 ) * 200;
+				
+				renderer.render( scene, camera );
+				
+			}
+
+			setup();
+			draw();
+
+
+		</script>
+		
+	</body>
+</html
