@@ -235,93 +235,93 @@
          //add obj model (static)
          // obj texture
 
- //         var manager = new THREE.LoadingManager();
- //         manager.onProgress = function ( item, loaded, total ) {
+         // var manager = new THREE.LoadingManager();
+         // manager.onProgress = function ( item, loaded, total ) {
 
- //             console.log( item, loaded, total );
+         //     console.log( item, loaded, total );
 
- //         };
+         // };
 
- //         var textureLoader = new THREE.TextureLoader( manager );
- //         var texture = textureLoader.load( '../../data/data/UV_Grid_Sm.jpg' );
+         // var textureLoader = new THREE.TextureLoader( manager );
+         // var texture = textureLoader.load( '../../data/data/UV_Grid_Sm.jpg' );
 
- //         // obj model
- //         var onProgress = function ( xhr ) {
- //             if ( xhr.lengthComputable ) {
- //                 var percentComplete = xhr.loaded / xhr.total * 100;
- //                 console.log( Math.round(percentComplete, 2) + '% downloaded' );
- //             }
- //         };
+         // obj model
+         // var onProgress = function ( xhr ) {
+         //     if ( xhr.lengthComputable ) {
+         //         var percentComplete = xhr.loaded / xhr.total * 100;
+         //         console.log( Math.round(percentComplete, 2) + '% downloaded' );
+         //     }
+         // };
 
- //         var onError = function ( xhr ) {
- //         };
+         // var onError = function ( xhr ) {
+         // };
 
- //         var loader = new THREE.OBJLoader( manager );
- //         loader.load( '../../data/data/male02/male02.obj', function ( object ) {
+         // var loader = new THREE.OBJLoader( manager );
+         // loader.load( '../../data/data/male02/male02.obj', function ( object ) {
 
- //             object.traverse( function ( child ) {
+         //     object.traverse( function ( child ) {
 
- //                 if ( child instanceof THREE.Mesh ) {
+         //         if ( child instanceof THREE.Mesh ) {
 
- //                     child.material.map = texture;
+         //             child.material.map = texture;
 
- //                 }
+         //         }
 
- //             } );
+         //     } );
 
- // //					object.position.y = - 95;
- // //					scene.add( object );
- //             object.scale.set(.02, .02, .02);
- //             arWorldRoot.add( object );
+ //					object.position.y = - 95;
+ //					scene.add( object );
+         //     object.scale.set(.02, .02, .02);
+         //     arWorldRoot.add( object );
 
- //         }, onProgress, onError );
+         // }, onProgress, onError );
 
          //end obj code
         ///////////////////////////////////////////////////////////
         
         
         //////////FROM FBX IMPORT
- //        stats = new Stats();
- //        container.appendChild( stats.dom );
+        // stats = new Stats();
+        // container.appendChild( stats.dom );
         
-	// //////////////////////////////////////////////////////////////////////////////////
-	// //		render the whole thing on the page
-	// //////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////
+	//		render the whole thing on the page
+	//////////////////////////////////////////////////////////////////////////////////
 	
- //        var stats2 = new Stats();
- //        document.body.appendChild( stats2.dom );
- //        // render the scene
- //        onRenderFcts.push(function(){
- //            renderer.render( scene, camera );
- //            stats2.update();
- //        })
+        var stats2 = new Stats();
+        document.body.appendChild( stats2.dom );
+        // render the scene
+        onRenderFcts.push(function(){
+            renderer.render( scene, camera );
+            stats2.update();
+        })
 
- //        // run the rendering loop
- //        var lastTimeMsec= null
- //        requestAnimationFrame(function animate(nowMsec){
- //            // keep looping
- //            requestAnimationFrame( animate );
- //            // measure time
- //            lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
- //            var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
- //            lastTimeMsec	= nowMsec
- //            // call each update function
- //            onRenderFcts.forEach(function(onRenderFct){
- //                onRenderFct(deltaMsec/1000, nowMsec/1000)
- //            })
- //        })
+        // run the rendering loop
+        var lastTimeMsec= null
+        requestAnimationFrame(function animate(nowMsec){
+            // keep looping
+            requestAnimationFrame( animate );
+            // measure time
+            lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
+            var deltaMsec	= Math.min(200, nowMsec - lastTimeMsec)
+            lastTimeMsec	= nowMsec
+            // call each update function
+            onRenderFcts.forEach(function(onRenderFct){
+                onRenderFct(deltaMsec/1000, nowMsec/1000)
+            })
+        })
         
- //    animate();
+    animate();
         
- //        function animate() {
-	// 			requestAnimationFrame( animate );
-	// 			if ( mixers.length > 0 ) {
-	// 				for ( var i = 0; i < mixers.length; i ++ ) {
-	// 					mixers[ i ].update( clock.getDelta() );
-	// 				}
-	// 			}
-	// 			renderer.render( scene, camera );
-	// 			stats.update();
-	// 		}
+        function animate() {
+				requestAnimationFrame( animate );
+				if ( mixers.length > 0 ) {
+					for ( var i = 0; i < mixers.length; i ++ ) {
+						mixers[ i ].update( clock.getDelta() );
+					}
+				}
+				renderer.render( scene, camera );
+				stats.update();
+			}
     
 </script></body>
