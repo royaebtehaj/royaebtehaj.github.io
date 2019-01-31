@@ -198,14 +198,14 @@
         
         ///////////////////////////////////////////////////////////
 //        // add a taurus with rotation animation
-//        geometry = new THREE.TorusKnotGeometry(0.3,0.1,64,16);
-//        material = new THREE.MeshNormalMaterial(); 
-//        mesh = new THREE.Mesh( geometry, material );
-//        mesh.position.y	= 0.5
-//        arWorldRoot.add( mesh );
-//        onRenderFcts.push(function(){
-//            mesh.rotation.x += 0.1
-//        })
+       // geometry = new THREE.TorusKnotGeometry(0.3,0.1,64,16);
+       // material = new THREE.MeshNormalMaterial(); 
+       // mesh = new THREE.Mesh( geometry, material );
+       // mesh.position.y	= 0.5
+       // arWorldRoot.add( mesh );
+       // onRenderFcts.push(function(){
+       //     mesh.rotation.x += 0.1
+       // })
 //        // end taurus code
        ///////////////////////////////////////////////////////////
         
@@ -235,46 +235,46 @@
          //add obj model (static)
          // obj texture
 
-         // var manager = new THREE.LoadingManager();
-         // manager.onProgress = function ( item, loaded, total ) {
+         var manager = new THREE.LoadingManager();
+         manager.onProgress = function ( item, loaded, total ) {
 
-         //     console.log( item, loaded, total );
+             console.log( item, loaded, total );
 
-         // };
+         };
 
-         // var textureLoader = new THREE.TextureLoader( manager );
-         // var texture = textureLoader.load( '../../data/data/UV_Grid_Sm.jpg' );
+         var textureLoader = new THREE.TextureLoader( manager );
+         var texture = textureLoader.load( '../../data/data/UV_Grid_Sm.jpg' );
 
-         // obj model
-         // var onProgress = function ( xhr ) {
-         //     if ( xhr.lengthComputable ) {
-         //         var percentComplete = xhr.loaded / xhr.total * 100;
-         //         console.log( Math.round(percentComplete, 2) + '% downloaded' );
-         //     }
-         // };
+         obj model
+         var onProgress = function ( xhr ) {
+             if ( xhr.lengthComputable ) {
+                 var percentComplete = xhr.loaded / xhr.total * 100;
+                 console.log( Math.round(percentComplete, 2) + '% downloaded' );
+             }
+         };
 
-         // var onError = function ( xhr ) {
-         // };
+         var onError = function ( xhr ) {
+         };
 
-         // var loader = new THREE.OBJLoader( manager );
-         // loader.load( '../../data/data/male02/male02.obj', function ( object ) {
+         var loader = new THREE.OBJLoader( manager );
+         loader.load( '../../data/data/male02/male02.obj', function ( object ) {
 
-         //     object.traverse( function ( child ) {
+             object.traverse( function ( child ) {
 
-         //         if ( child instanceof THREE.Mesh ) {
+                 if ( child instanceof THREE.Mesh ) {
 
-         //             child.material.map = texture;
+                     child.material.map = texture;
 
-         //         }
+                 }
 
-         //     } );
+             } );
 
- //					object.position.y = - 95;
- //					scene.add( object );
-         //     object.scale.set(.02, .02, .02);
-         //     arWorldRoot.add( object );
+ 					object.position.y = - 95;
+ 					scene.add( object );
+             object.scale.set(.02, .02, .02);
+             arWorldRoot.add( object );
 
-         // }, onProgress, onError );
+         }, onProgress, onError );
 
          //end obj code
         ///////////////////////////////////////////////////////////
@@ -311,17 +311,17 @@
             })
         })
         
-    animate();
+   //  animate();
         
-        function animate() {
-				requestAnimationFrame( animate );
-				if ( mixers.length > 0 ) {
-					for ( var i = 0; i < mixers.length; i ++ ) {
-						mixers[ i ].update( clock.getDelta() );
-					}
-				}
-				renderer.render( scene, camera );
-				stats.update();
-			}
+   //      function animate() {
+			// 	requestAnimationFrame( animate );
+			// 	if ( mixers.length > 0 ) {
+			// 		for ( var i = 0; i < mixers.length; i ++ ) {
+			// 			mixers[ i ].update( clock.getDelta() );
+			// 		}
+			// 	}
+			// 	renderer.render( scene, camera );
+			// 	stats.update();
+			// }
     
 </script></body>
