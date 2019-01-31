@@ -245,7 +245,7 @@
          var textureLoader = new THREE.TextureLoader( manager );
          var texture = textureLoader.load( '../../data/data/UV_Grid_Sm.jpg' );
 
-         obj model
+        // obj model
          var onProgress = function ( xhr ) {
              if ( xhr.lengthComputable ) {
                  var percentComplete = xhr.loaded / xhr.total * 100;
@@ -269,8 +269,8 @@
 
              } );
 
- 					object.position.y = - 95;
- 					scene.add( object );
+ 					// object.position.y = - 95;
+ 					// scene.add( object );
              object.scale.set(.02, .02, .02);
              arWorldRoot.add( object );
 
