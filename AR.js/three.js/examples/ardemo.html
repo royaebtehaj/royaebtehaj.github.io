@@ -171,13 +171,13 @@
         
         ///////////////////////////////////////////////////////////
         // add a static cube
+        map = THREE.ImageUtils.loadTexture('../texturez/proxy.php?url=https://i.imgur.com/VcHzuk4.jpg');
         geometry = new THREE.CubeGeometry(1,0.3,1);
-        material = new THREE.MeshNormalMaterial({
-            transparent : true,
-            opacity: 1,
-            side: THREE.DoubleSide
-        }); 
+        material = new THREE.MeshBasicMaterial({shading: THREE.FlatShading, color: 0xdcdcdc, map: map});
+
         mesh = new THREE.Mesh( geometry, material );
+        map.wrapS = map.wrapT = THREE.RepeatWrapping;
+        map.repeat.set( 1, 1 );
         mesh.position.y	= geometry.parameters.height/2
         arWorldRoot.add(mesh);
         // end cube code
