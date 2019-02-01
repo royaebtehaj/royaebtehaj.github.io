@@ -278,7 +278,7 @@
          };
 
          var loader = new THREE.OBJLoader( manager );
-         loader.load( '../../data/data/male02/bunny.obj', function ( object ) {
+         loader.load( '../../data/data/male02/plane.obj', function ( object ) {
 
              object.traverse( function ( child ) {
 
@@ -289,7 +289,7 @@
                  }
 
              } );
-                    object.position.y = .5;
+                    object.position.y = .05;
                     // object.rotation.y = 5;
       //                       object.rotation.z= 5;
                     // scene.add( object );
