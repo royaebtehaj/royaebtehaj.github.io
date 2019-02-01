@@ -207,15 +207,15 @@
             //add obj model (static)
         
         ///////////////////////////////////////////////////////////
-        // var manager = new THREE.LoadingManager();
-        //  manager.onProgress = function ( item, loaded, total ) {
+        var manager = new THREE.LoadingManager();
+         manager.onProgress = function ( item, loaded, total ) {
 
-        //      console.log( item, loaded, total );
+             console.log( item, loaded, total );
 
-        //  };
+         };
 
-        //  var textureLoader = new THREE.TextureLoader( manager );
-        //  var texture = textureLoader.load( '../../data/data/male02/male-02-1noCulling.JPG' );
+         var textureLoader = new THREE.TextureLoader( manager );
+         var texture = textureLoader.load( '../../data/data/male02/male-02-1noCulling.JPG' );
 
         // obj model
          var onProgress = function ( xhr ) {
