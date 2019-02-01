@@ -204,50 +204,7 @@
         //end fbx code
         ///////////////////////////////////////////////////////////
 
-            //add obj model (static)
-        
-        ///////////////////////////////////////////////////////////
-        var manager = new THREE.LoadingManager();
-         manager.onProgress = function ( item, loaded, total ) {
-
-             console.log( item, loaded, total );
-
-         };
-
-         var textureLoader = new THREE.TextureLoader( manager );
-         var texture = textureLoader.load( '../../data/data/male02/male-02-1noCulling.JPG' );
-
-        // obj model
-         var onProgress = function ( xhr ) {
-             if ( xhr.lengthComputable ) {
-                 var percentComplete = xhr.loaded / xhr.total * 100;
-                 console.log( Math.round(percentComplete, 2) + '% downloaded' );
-             }
-         };
-
-         var onError = function ( xhr ) {
-         };
-
-         var loader = new THREE.OBJLoader( manager );
-         loader.load( '../../data/data/male02/plane.obj', function ( object ) {
-
-             object.traverse( function ( child ) {
-
-                 if ( child instanceof THREE.Mesh ) {
-
-                     child.material.map = texture;
-
-                 }
-
-             } );
-                  
-   
-                    // scene.add( object );
-             object.scale.set(1, 1, 1);
-             arWorldRoot.add( object );
-
-         }, onProgress, onError );
-
+       
 
          //add obj model (static)
          // obj texture
@@ -296,11 +253,54 @@
 
          //end obj code
         ///////////////////////////////////////////////////////////
+        //add obj model (static)
+         // obj texture
+
+         var manager = new THREE.LoadingManager();
+         manager.onProgress = function ( item, loaded, total ) {
+
+             console.log( item, loaded, total );
+
+         };
+
+         var textureLoader = new THREE.TextureLoader( manager );
+         var texture = textureLoader.load( '../../data/data/male02/male-02-1noCulling.JPG' );
+
+        // obj model
+         var onProgress = function ( xhr ) {
+             if ( xhr.lengthComputable ) {
+                 var percentComplete = xhr.loaded / xhr.total * 100;
+                 console.log( Math.round(percentComplete, 2) + '% downloaded' );
+             }
+         };
+
+         var onError = function ( xhr ) {
+         };
+
+         var loader = new THREE.OBJLoader( manager );
+         loader.load( '../../data/data/male02/bunny.obj', function ( object ) {
+
+             object.traverse( function ( child ) {
+
+                 if ( child instanceof THREE.Mesh ) {
+
+                     child.material.map = texture;
+
+                 }
+
+             } );
+                    object.position.y = 5;
+                    // object.rotation.y = 5;
+      //                       object.rotation.z= 5;
+                    // scene.add( object );
+             object.scale.set(.02, .02, .02);
+             arWorldRoot.add( object );
+
+         }, onProgress, onError );
+
+         //end obj code
         
         
-        //////////FROM FBX IMPORT
-        // stats = new Stats();
-        // container.appendChild( stats.dom );
         
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
