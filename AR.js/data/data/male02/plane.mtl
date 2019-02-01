@@ -1,0 +1,46 @@
+newmtl _01_-_Default1noCulli__01_-_Default1noCulli
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+d 1
+Ns 0.00000
+illum 1
+map_Kd plane__01_-_Default1noCulli__01_-_Default1noCulli.JPG
+
+newmtl FrontColorNoCullingID_male-02-1noCulling.JP
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+d 1
+Ns 0.00000
+illum 1
+map_Kd plane_FrontColorNoCullingID_male-02-1noCulling.JP.JPG
+
+newmtl male-02-1noCullingID_male-02-1noCulling.JP
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+d 1
+Ns 0.00000
+illum 1
+map_Kd plane_male-02-1noCullingID_male-02-1noCulling.JP.JPG
+
+newmtl orig_02_-_Defaul1noCu_orig_02_-_Defaul1noCu
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+d 1
+Ns 0.00000
+illum 1
+map_Kd plane_orig_02_-_Defaul1noCu_orig_02_-_Defaul1noCu.JPG
+
+newmtl FrontColorNoCullingID_orig_02_-_Defaul1noCu
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+d 1
+Ns 0.00000
+illum 1
+map_Kd plane_FrontColorNoCullingID_orig_02_-_Defaul1noCu.JPG
+
+newmtl NO_MATERIAL
+Ka 1.000000 0.000000 0.000000
+Ks 0.000000 0.000000 0.000000
+d 1
+Ns 0.00000
+illum 1
