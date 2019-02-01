@@ -183,12 +183,14 @@
         // end cube code
         ///////////////////////////////////////////////////////////
         map = THREE.ImageUtils.loadTexture('../texturez/proxy.php?url=https://i.imgur.com/VcHzuk4.jpg');
-        geometry = new THREE.CubeGeometry(200, 200, 200);
+        geometry = new THREE.CubeGeometry(1,0.3,1);
         material = new THREE.MeshBasicMaterial({shading: THREE.FlatShading, color: 0xdcdcdc, map: map});
         mesh = new THREE.Mesh(geometry, material);
+        mesh.position.y = geometry.parameters.height/2
+        arWorldRoot.add(mesh);
         map.wrapS = map.wrapT = THREE.RepeatWrapping;
         map.repeat.set( 1, 1 );
-        scene.add(mesh);
+       
 
         
         ///////////////////////////////////////////////////////////
